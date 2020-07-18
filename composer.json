@@ -1,0 +1,19 @@
+{
+    "name": "asrafulhaq/edu-board",
+    "description": "This is a learning purpose project for result calcultion",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "asraful",
+            "email": "asraful47@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "Edu\\Board\\" : "app\\"
+        }
+    },
+
+    "require": {}
+}
