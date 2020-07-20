@@ -20,7 +20,7 @@
                             <li> <span class="arrow top hidden-nav-xs"></span> <a href="#">Settings</a> </li>
                             <li> <a href="profile.html">Profile</a> </li>
                             <li class="divider"></li>
-                            <li> <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a> </li>
+                            <li> <a href="?logout=success" >Logout</a></li>
                         </ul>
 
 
