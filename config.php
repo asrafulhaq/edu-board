@@ -1,6 +1,6 @@
 <?php  
 
-
+	session_start();
 
 	/**
 	 * Server Constant
@@ -9,12 +9,6 @@
 	define('USER', 'root');
 	define('PASS', '');
 	define('DB', 'edu');
-
-
-
-
-
-
 
 
 

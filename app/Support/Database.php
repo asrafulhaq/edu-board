@@ -1,7 +1,7 @@
 <?php  
 	
-	require_once "../../config.php";
 	namespace Edu\Board\Support;
+	
 	use PDO;
 
 	/**
@@ -25,9 +25,32 @@
 		private function connection()
 		{			
 
-			$connection = new PDO("mysql:host=". $this -> host .";db_name=". $this -> db , $this -> user , $this -> pass);
+			return $this -> connection = new PDO("mysql:host=". $this -> host .";dbname=". $this -> db , $this -> user , $this -> pass);
 				
-		}		
+		}	
+
+
+		/**
+		 * Data Check 
+		 */
+		public function dataCheck($tbl, $data)
+		{
+		 	$stmt = $this -> connection() -> prepare("SELECT * FROM $tbl WHERE email='$data' || uname='$data'");
+		 	$stmt -> execute();
+
+		 	$num = $stmt -> rowCount();
+
+		 	return [
+		 		'num'	=> $num,
+		 		'data'	=> $stmt
+		 	];		 	
+
+
+
+
+		}
+
+			
 
 
 	}
