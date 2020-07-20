@@ -17,7 +17,7 @@
 
 
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li> <span class="arrow top hidden-nav-xs"></span> <a href="#">Settings</a> </li>
+                            <li> <span class="arrow top hidden-nav-xs"></span> <a href="password_change.php">Settings</a> </li>
                             <li> <a href="profile.html">Profile</a> </li>
                             <li class="divider"></li>
                             <li> <a href="?logout=success" >Logout</a></li>
