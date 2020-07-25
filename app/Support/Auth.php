@@ -10,6 +10,8 @@
 	class Auth extends Database
 	{
 		
+
+		
 		
 		/**
 		 * Login Management System 
@@ -18,11 +20,11 @@
 		{
 			$data = $this -> emailUsernameCheck($email_uname);
 
+			$user_num = $data['num'];
+			$login_user_data = $data['data'] -> fetch(PDO::FETCH_ASSOC);
 
-			$num = $data['num'];
-			$login_user_data  = $data['data'] -> fetch(PDO::FETCH_ASSOC);
 
-			if ( $num == 1 ) {
+			if ( $user_num == 1 ) {
 				
 				if ( password_verify( $pass , $login_user_data['pass'] ) ) {
 					
@@ -57,7 +59,10 @@
 		 */
 		public function emailUsernameCheck($email_uname)
 		{
-			return $this -> dataCheck('users' , $email_uname);		
+			return $this -> dataCheck('users', [
+				'email'		=> $email_uname,
+				'uname'		=> $email_uname,
+			], 'OR' );		
 
 
 		}

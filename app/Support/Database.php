@@ -30,35 +30,90 @@
 		}	
 
 
+
+
 		/**
-		 * Data Check 
+		 * Data create 
 		 */
-		public function dataCheck($tbl, $data)
+		public function create($table, $data)
 		{
-		 	$stmt = $this -> connection() -> prepare("SELECT * FROM $tbl WHERE email='$data' || uname='$data'");
-		 	$stmt -> execute();
+			
 
-		 	$num = $stmt -> rowCount();
+			// Make SQL Column form data
+			$array_key = array_keys($data);
+			$array_col = implode(',', $array_key);
 
-		 	return [
-		 		'num'	=> $num,
-		 		'data'	=> $stmt
-		 	];		 	
+			// make SQL values from data 
+			$array_val = array_values($data);
+
+			foreach ($array_val as $value) {
+				
+				$form_value[] = "'".$value."'";
+
+			}
+
+			$array_values = implode(',', $form_value);
 
 
 
+
+			// Data send to table
+			$sql = "INSERT INTO $table ($array_col) VALUES ($array_values)" ;
+			$stmt = $this -> connection() -> prepare($sql);
+			$stmt -> execute();
+			
+			if ( $stmt ) {
+				return true;
+			}else {
+				return false;
+			}
+			
 
 		}
 
+
 		/**
-		 * 
+		 * Find data by id 
 		 */
-		public function dataCheckPro($tbl, array $data, $condition = 'AND')
+		public function find($id)
+		{
+			
+		}
+
+
+		/**
+		 * Delete data by id 
+		 */
+
+		public function delete($id)
+		{
+			
+		}
+
+
+
+		/**
+		 * Data show all
+		 */
+
+		public function all($tbl, $order = 'DESC')
+		{
+			$sql = "SELECT * FROM $tbl ORDER BY id $order";
+			$stmt = $this -> connection() -> prepare($sql);
+			$stmt -> execute();
+			return $stmt;
+		}
+		
+
+		/**
+		 * Data Check 
+		 */
+		public function dataCheck($tbl, array $data, $condition = 'AND')
 		{
 			$query_string= '';
 			foreach( $data as $key => $val ){
 
-				$query_string .=  $key . "='$val' AND ";
+				$query_string .=  $key . "='$val' $condition ";
 				
 
 			}
@@ -71,6 +126,12 @@
 
 			$stmt = $this -> connection() -> prepare("SELECT * FROM $tbl WHERE $final_query_string");
 			$stmt -> execute();
+			$num = $stmt -> rowCount();
+
+			return [
+				'num'	=> $num,
+				'data'	=> $stmt,
+			];
 
 
 

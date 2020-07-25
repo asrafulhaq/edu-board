@@ -40,6 +40,7 @@
     <script src="js/calendar/demo.js"></script>
     <script src="js/sortable/jquery.sortable.js"></script>
     <script src="js/app.plugin.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 <!-- Mirrored from flatfull.com/themes/scale/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Jul 2019 15:14:15 GMT -->
 
