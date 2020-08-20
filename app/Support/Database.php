@@ -30,6 +30,30 @@
 		}	
 
 
+		/**
+		 * File upload managements 
+		 */
+
+		protected function fileUpload($file, $location = '', array $file_type = ['jpg','png','jpeg', 'gif'])
+		{
+			
+			// file info
+			$file_name = $file['name'];
+			$file_tmp = $file['tmp_name'];
+			$file_size = $file['size'];
+
+			// File extension 
+			$file_array = explode('.', $file_name);
+			$file_extension = strtolower(end($file_array ));
+
+			// unique name 
+			$unique_file_name = md5(time().rand()) .'.'.$file_extension;
+
+			// File uplaod 
+			move_uploaded_file( $file_tmp , $location . $unique_file_name );
+
+			return $unique_file_name;
+		}
 
 
 		/**
@@ -85,9 +109,12 @@
 		 * Delete data by id 
 		 */
 
-		public function delete($id)
+		public function delete($tbl, $id)
 		{
-			
+			$sql = "DELETE FROM $tbl WHERE id='$id'";
+			$stmt = $this -> connection() -> prepare($sql);
+			$stmt -> execute();
+			return true;
 		}
 
 
@@ -156,6 +183,18 @@
 			$stmt = $this -> connection() -> prepare("UPDATE $tbl SET $final_query_string WHERE id='$id' ");
 			$stmt -> execute();
 
+		}
+
+
+		/**
+		 * custom Query
+		 */
+		public function customQuery($query)
+		{
+			$sql = $query;
+			$stmt = $this -> connection() -> prepare($sql);
+			$stmt -> execute();
+			return $stmt;
 		}
 
 

@@ -1,3 +1,37 @@
+<?php  
+	
+	require_once "config.php";
+	require_once "vendor/autoload.php";
+
+	use Edu\Board\Controller\Result;
+
+	$res =  new Result;
+
+
+
+	/**
+	 * Search form isset
+	 */
+	if ( isset($_POST['result']) ) {
+
+		// Get values
+		$exam = $_POST['exam'];
+		$year = $_POST['year'];
+		$board = $_POST['board'];
+		$roll = $_POST['roll'];
+		$reg = $_POST['reg'];
+
+
+		$result_data = $res -> searchResult($exam, $year, $board, $roll, $reg);
+
+
+
+	}else {
+		header("location:index.php");
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,29 +60,29 @@
 
 				<div class="student-info">
 					<div class="student-photo">
-						<img src="assets/images/Piet-Olivier-photo-passport-size.jpeg" alt="">
+						<img src="admin/students/<?php echo $result_data['photo']; ?>" alt="">
 					</div>
 					<div class="student-details">
 						<table>
 							<tr>
 								<td>Name</td>
-								<td>Asraful Haque</td>
+								<td><?php echo $result_data['name']; ?></td>
 							</tr>
 							<tr>
 								<td>Roll</td>
-								<td>505050</td>
+								<td><?php echo $result_data['roll']; ?></td>
 							</tr>
 							<tr>
 								<td>Reg.</td>
-								<td>101010</td>
+								<td><?php echo $result_data['reg']; ?></td>
 							</tr>
 							<tr>
 								<td>Board</td>
-								<td>Dhaka</td>
+								<td><?php echo $result_data['board']; ?></td>
 							</tr>
 							<tr>
 								<td>Institute</td>
-								<td>CT</td>
+								<td><?php echo $result_data['inst']; ?></td>
 							</tr>
 							<tr>
 								<td>Result</td>
@@ -70,40 +104,40 @@
 						</tr>
 						<tr>
 							<td>Bangla</td>
-							<td>89</td>
-							<td>5</td>
-							<td>4.8</td>
+							<td><?php echo $result_data['ban']; ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['ban']); echo $data['grade'] ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['ban']); echo $data['gpa'] ?></td>
 							<td rowspan="6">4.8</td>
 						</tr>
 						<tr>
-							<td>Bangla</td>
-							<td>89</td>
-							<td>5</td>
-							<td>4.8</td>
+							<td>English</td>
+							<td><?php echo $result_data['eng']; ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['eng']); echo $data['grade'] ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['eng']); echo $data['gpa'] ?></td>
 						</tr>
 						<tr>
-							<td>Bangla</td>
-							<td>89</td>
-							<td>5</td>
-							<td>4.8</td>
+							<td>Math</td>
+							<td><?php echo $result_data['math']; ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['math']); echo $data['grade'] ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['math']); echo $data['gpa'] ?></td>
 						</tr>
 						<tr>
-							<td>Bangla</td>
-							<td>89</td>
-							<td>5</td>
-							<td>4.8</td>
+							<td>Social Science</td>
+							<td><?php echo $result_data['ss']; ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['ss']); echo $data['grade'] ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['ss']); echo $data['gpa'] ?></td>
 						</tr>
 						<tr>
-							<td>Bangla</td>
-							<td>89</td>
-							<td>5</td>
-							<td>4.8</td>
+							<td>Science</td>
+							<td><?php echo $result_data['s']; ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['s']); echo $data['grade'] ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['s']); echo $data['gpa'] ?></td>
 						</tr>
 						<tr>
-							<td>Bangla</td>
-							<td>89</td>
-							<td>5</td>
-							<td>4.8</td>
+							<td>Religion</td>
+							<td><?php echo $result_data['rel']; ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['rel']); echo $data['grade'] ?></td>
+							<td><?php $data = $res -> getGradeGpa($result_data['rel']); echo $data['gpa'] ?></td>
 						</tr>
 					</table>
 				</div>

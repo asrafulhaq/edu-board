@@ -35,38 +35,64 @@
 
 
                     
-                    <div id="add_user_modal" class="modal fade">
+                    <div id="add_result" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <!-- <div class="modal-header"></div> -->
                                 <div class="modal-body">
-                                    <h2>Add new result</h2>
+                                    <h2>Add result</h2>
                                     <div class="mess"></div>
                                     <hr>
-                                    <form id="add_student_form" action="" method="POST" enctype="multipart/form-data">
+                                    <div class="student-res-data">
+                                        <img style="width: 200px;height: 200px;display: block;margin: auto;" src="" alt="">
+                                        <h3 class="text-center"></h3>
+                                        <h4 class="text-center"></h4>
+                                    </div>
+                                    <form id="add_student_result" action="" method="POST" >
                                         <div class="form-group">
-                                            <label for="">Name</label>
-                                            <input class="form-control" name="name" type="text">
+                                            
+                                            <label id="idstudent" for="">Search Student</label>
+                                            <input id="search_student" class="form-control" name="student_id" type="text">
+                                            <div class="stu_res"></div>
+
+                                            
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="">Email</label>
-                                            <input class="form-control" name="email" type="text">
+                                            <label for="">Bangla</label>
+                                            <input class="form-control" name="ban" type="text">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="">Cell</label>
-                                            <input class="form-control" name="cell" type="text">
+                                         <div class="form-group">
+                                            <label for="">English</label>
+                                            <input class="form-control" name="eng" type="text">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="">Photo</label>
-                                            <input class="" name="photo" type="file">
+                                         <div class="form-group">
+                                            <label for="">Math</label>
+                                            <input class="form-control" name="math" type="text">
                                         </div>
+
+                                         <div class="form-group">
+                                            <label for="">Social Scuence</label>
+                                            <input class="form-control" name="ss" type="text">
+                                        </div>
+
+                                         <div class="form-group">
+                                            <label for="">Science</label>
+                                            <input class="form-control" name="s" type="text">
+                                        </div>
+
+                                         <div class="form-group">
+                                            <label for="">Religion</label>
+                                            <input class="form-control" name="rel" type="text">
+                                        </div>
+
+                                        
 
                                         <div class="form-group">
                                             <label for=""></label>
-                                            <input class="btn btn-primary" name="add" type="submit" value="Add User">
+                                            <input class="btn btn-primary" name="add" type="submit" value="Add Result">
                                         </div>
                                     </form>
                                 </div>
@@ -77,11 +103,11 @@
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <a id="add_user_btn" class="btn btn-sm btn-primary" href="#">Add new user</a> 
+                            <a id="add_result_btn" class="btn btn-sm btn-primary" href="#">Add student result</a> 
 
                             <br>
                             <br>
-
+                            <div class="mess"></div>
                             <section class="panel panel-default">
                                 <header class="panel-heading"><span class="label bg-danger pull-right m-t-xs">4 left</span> All result</header>
                                 <table class="table table-striped m-b-none">

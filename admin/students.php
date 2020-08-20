@@ -170,97 +170,10 @@
                                             <th>action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Asraful Haque</td>
-                                            <td>haq@gmail.com</td>
-                                            <td>01717700811</td>
-                                            <td>admin</td>
-                                            <td><img style="width: 50px;height:50px;" src="images/a4.png" alt=""></td>
-                                            <td>active</td>
-                                            <td>
-                                                <a class="btn btn-sm btn-info" href="#">View</a>
-                                                <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                                                <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Asraful Haque</td>
-                                            <td>haq@gmail.com</td>
-                                            <td>01717700811</td>
-                                            <td>admin</td>
-                                            <td><img style="width: 50px;height:50px;" src="images/a4.png" alt=""></td>
-                                            <td>active</td>
-                                            <td>
-                                                <a class="btn btn-sm btn-info" href="#">View</a>
-                                                <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                                                <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                                            </td>
-                                        </tr>
+                                    <tbody id="all-student">
+                                        
 
 
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Asraful Haque</td>
-                                            <td>haq@gmail.com</td>
-                                            <td>01717700811</td>
-                                            <td>admin</td>
-                                            <td><img style="width: 50px;height:50px;" src="images/a4.png" alt=""></td>
-                                            <td>active</td>
-                                            <td>
-                                                <a class="btn btn-sm btn-info" href="#">View</a>
-                                                <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                                                <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Asraful Haque</td>
-                                            <td>haq@gmail.com</td>
-                                            <td>01717700811</td>
-                                            <td>admin</td>
-                                            <td><img style="width: 50px;height:50px;" src="images/a4.png" alt=""></td>
-                                            <td>active</td>
-                                            <td>
-                                                <a class="btn btn-sm btn-info" href="#">View</a>
-                                                <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                                                <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Asraful Haque</td>
-                                            <td>haq@gmail.com</td>
-                                            <td>01717700811</td>
-                                            <td>admin</td>
-                                            <td><img style="width: 50px;height:50px;" src="images/a4.png" alt=""></td>
-                                            <td>active</td>
-                                            <td>
-                                                <a class="btn btn-sm btn-info" href="#">View</a>
-                                                <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                                                <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Asraful Haque</td>
-                                            <td>haq@gmail.com</td>
-                                            <td>01717700811</td>
-                                            <td>admin</td>
-                                            <td><img style="width: 50px;height:50px;" src="images/a4.png" alt=""></td>
-                                            <td>active</td>
-                                            <td>
-                                                <a class="btn btn-sm btn-info" href="#">View</a>
-                                                <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                                                <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </section>

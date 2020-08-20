@@ -43,12 +43,27 @@
 			return "<p class=\"alert alert-success\">Pasword change successfull ! <button class=\"close\" data-dismiss=\"alert\">&times;</button></p>";
 		}
 
-
+		/**
+		 * Show All Users
+		 */
 		public function allUser()
 		{
 			$data = $this -> all('users');
 
 			return $data;
+		}
+
+		/**
+		 * Delete User 
+		 */
+
+		public function userDelete($id)
+		{
+			$data = $this -> delete('users', $id);
+
+			if ( $data ) {
+				return true;
+			}
 		}
 
 
